@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_accueil"
+            android:icon="@drawable/nav_accueil"
+            android:title="Accueil" />
+
+        <item
+            android:id="@+id/nav_gerer"
+            android:icon="@drawable/nav_gerer"
+            android:title="Gérer" />
+
+        <item
+            android:id="@+id/nav_application"
+            android:icon="@drawable/nav_application"
+            android:title="Application" />
+
+    </group>
+
+    <item android:title="Profil">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_compte"
+                    android:icon="@drawable/nav_compte"
+                    android:title="Compte" />
+
+                <item
+                    android:id="@+id/nav_quitter"
+                    android:icon="@drawable/nav_quitter"
+                    android:title="Quitter" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
