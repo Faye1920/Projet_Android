@@ -64,10 +64,10 @@ public class UserIndexActivity extends AppCompatActivity implements NavigationVi
         if (id == R.id.nav_accueil) {
             Intent intent = new Intent(UserIndexActivity.this, UserIndexActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_gerer) {
+        } else if (id == R.id.nav_message) {
             Intent intent = new Intent(UserIndexActivity.this, MessageActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_application) {
+        } else if (id == R.id.nav_envoyer) {
             Intent intent = new Intent(UserIndexActivity.this, EnvoyerActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_compte) {

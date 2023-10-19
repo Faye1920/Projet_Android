@@ -15,8 +15,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.gestionapp.R;
 
@@ -56,6 +54,7 @@ public class CompteActivity extends AppCompatActivity {
         listViewInfo.setAdapter(adapterInfo);
         listViewAdresse.setAdapter(adapterAdresse);
 
+        // Bouton pour revenir à la page Acceuil
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
