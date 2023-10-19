@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.gestionapp.R;
+import com.example.gestionapp.user.login.UserLoginActivity;
 import com.example.gestionapp.user.type.ApplicationActivity;
 import com.example.gestionapp.user.type.CompteActivity;
 import com.example.gestionapp.user.type.GererActivity;
@@ -58,6 +59,26 @@ public class UserIndexActivity extends AppCompatActivity implements NavigationVi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
+        int id = menuItem.getItemId();
+
+        if (id == R.id.nav_accueil) {
+            Intent intent = new Intent(UserIndexActivity.this, UserIndexActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_gerer) {
+            Intent intent = new Intent(UserIndexActivity.this, GererActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_application) {
+            Intent intent = new Intent(UserIndexActivity.this, ApplicationActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_compte) {
+            Intent intent = new Intent(UserIndexActivity.this, CompteActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_quitter) {
+            Intent intent = new Intent(UserIndexActivity.this, UserLoginActivity.class);
+            startActivity(intent);
+        }
+
         return true;
     }
+
 }
