@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.gestionapp.R;
 
-public class GererActivity extends AppCompatActivity {
+public class EnvoyerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gerer);
+        setContentView(R.layout.activity_envoyer);
     }
 }

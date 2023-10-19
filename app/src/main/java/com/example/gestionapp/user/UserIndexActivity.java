@@ -14,9 +14,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.gestionapp.R;
 import com.example.gestionapp.user.login.UserLoginActivity;
-import com.example.gestionapp.user.type.ApplicationActivity;
 import com.example.gestionapp.user.type.CompteActivity;
-import com.example.gestionapp.user.type.GererActivity;
+import com.example.gestionapp.user.type.EnvoyerActivity;
+import com.example.gestionapp.user.type.MessageActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class UserIndexActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -65,10 +65,10 @@ public class UserIndexActivity extends AppCompatActivity implements NavigationVi
             Intent intent = new Intent(UserIndexActivity.this, UserIndexActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_gerer) {
-            Intent intent = new Intent(UserIndexActivity.this, GererActivity.class);
+            Intent intent = new Intent(UserIndexActivity.this, MessageActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_application) {
-            Intent intent = new Intent(UserIndexActivity.this, ApplicationActivity.class);
+            Intent intent = new Intent(UserIndexActivity.this, EnvoyerActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_compte) {
             Intent intent = new Intent(UserIndexActivity.this, CompteActivity.class);

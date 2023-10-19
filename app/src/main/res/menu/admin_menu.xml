@@ -10,13 +10,13 @@
 
         <item
             android:id="@+id/nav_gerer"
-            android:icon="@drawable/nav_message"
-            android:title="Message" />
+            android:icon="@drawable/nav_gerer"
+            android:title="Gérer" />
 
         <item
             android:id="@+id/nav_application"
-            android:icon="@drawable/nav_envoyer"
-            android:title="Envoyer un courriel" />
+            android:icon="@drawable/nav_application"
+            android:title="Application" />
 
     </group>
 
