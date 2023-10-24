@@ -13,11 +13,6 @@
             android:icon="@drawable/nav_gerer"
             android:title="Gérer" />
 
-        <item
-            android:id="@+id/nav_application"
-            android:icon="@drawable/nav_application"
-            android:title="Application" />
-
     </group>
 
     <item android:title="Profil">
@@ -30,11 +25,40 @@
                     android:title="Compte" />
 
                 <item
-                    android:id="@+id/nav_quitter"
-                    android:icon="@drawable/nav_quitter"
-                    android:title="Quitter" />
+                    android:id="@+id/nav_messager"
+                    android:icon="@drawable/nav_message"
+                    android:title="Message" />
+
             </group>
         </menu>
     </item>
+
+    <item android:title="Service">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_support"
+                    android:icon="@drawable/nav_support"
+                    android:title="Centre du support" />
+
+                <item
+                    android:id="@+id/nav_contact"
+                    android:icon="@drawable/nav_contact"
+                    android:title="Contacter aux administrateurs" />
+            </group>
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_quitter"
+            android:icon="@drawable/nav_quitter"
+            android:title="Quitter" />
+
+    </group>
+
+
 
 </menu>

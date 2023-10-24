@@ -70,7 +70,7 @@ public class CompteActivity extends AppCompatActivity {
         private boolean isEditable;
 
         public CustomAdapter(Context context, String[] names, String[] infoArray, boolean isEditable) {
-            super(context, R.layout.user_list_item, names);
+            super(context, R.layout.list_item, names);
             this.infoArray = infoArray;
             this.isEditable = isEditable;
         }
@@ -79,7 +79,7 @@ public class CompteActivity extends AppCompatActivity {
         @Override
         public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            View view = inflater.inflate(R.layout.user_list_item, parent, false);
+            View view = inflater.inflate(R.layout.list_item, parent, false);
 
             TextView leftText = view.findViewById(R.id.left_text);
             final TextView rightText = view.findViewById(R.id.right_text);
@@ -101,7 +101,7 @@ public class CompteActivity extends AppCompatActivity {
 
         private void showEditDialog(final int position, final TextView textView) {
             final Dialog dialog = new Dialog(CompteActivity.this);
-            dialog.setContentView(R.layout.user_info_edit);
+            dialog.setContentView(R.layout.info_edit);
 
             TextView dialogTitle = dialog.findViewById(R.id.dialog_title);
             final EditText editText = dialog.findViewById(R.id.edit_text);

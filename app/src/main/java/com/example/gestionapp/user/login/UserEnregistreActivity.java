@@ -10,12 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import com.example.gestionapp.R;
 import com.example.gestionapp.user.UserIndexActivity;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class UserEnregistreActivity extends AppCompatActivity {
 
-    private EditText courrielEditText, motDePasseEditText;
+    private EditText courrielEditText, motDePasseEditText, confirmMotDePasseEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,7 @@ public class UserEnregistreActivity extends AppCompatActivity {
 
         courrielEditText = findViewById(R.id.courriel);
         motDePasseEditText = findViewById(R.id.Motdepasse);
+        confirmMotDePasseEditText = findViewById(R.id.confirm_Motdepasse);
 
         ImageButton backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +45,11 @@ public class UserEnregistreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validateInput()) {
-                    Intent intent = new Intent(UserEnregistreActivity.this, UserIndexActivity.class);
+                    String courriel = courrielEditText.getText().toString().trim();
+                    String motDePasse = motDePasseEditText.getText().toString().trim();
+                    saveToUserFile(courriel, motDePasse);
+
+                    Intent intent = new Intent(UserEnregistreActivity.this, UserLoginActivity.class);
                     startActivity(intent);
                 }
             }
@@ -58,6 +68,7 @@ public class UserEnregistreActivity extends AppCompatActivity {
     private boolean validateInput() {
         String courriel = courrielEditText.getText().toString().trim();
         String motDePasse = motDePasseEditText.getText().toString().trim();
+        String confirmMotDePasse = confirmMotDePasseEditText.getText().toString().trim();
 
         if (!Patterns.EMAIL_ADDRESS.matcher(courriel).matches()) {
             courrielEditText.setError("Veuillez-vous entrer une adresse email valide");
@@ -71,6 +82,26 @@ public class UserEnregistreActivity extends AppCompatActivity {
             return false;
         }
 
+        if (!motDePasse.equals(confirmMotDePasse)) {
+            confirmMotDePasseEditText.setError("La saisie du mot de passe est différente");
+            confirmMotDePasseEditText.requestFocus();
+            return false;
+        }
+
         return true;
     }
+
+    private void saveToUserFile(String courriel, String motDePasse) {
+        String userData = courriel + "," + motDePasse + "\n";
+        try {
+            File file = new File(getFilesDir() + "/data/user.txt");
+            FileWriter writer = new FileWriter(file, true);
+            writer.append(userData);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
