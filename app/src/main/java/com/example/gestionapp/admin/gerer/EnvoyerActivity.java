@@ -1,4 +1,4 @@
-package com.example.gestionapp.user.type;
+package com.example.gestionapp.admin.gerer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,9 +19,9 @@ public class EnvoyerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_envoyer);
+        setContentView(R.layout.activity_envoyer_admin);
 
-        setContentView(R.layout.activity_envoyer);
+        setContentView(R.layout.activity_envoyer_admin);
         button = findViewById(R.id.btnSend);
         editTextSujet = findViewById(R.id.sujet);
         editTextContent = findViewById(R.id.content);
